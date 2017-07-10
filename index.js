@@ -77,9 +77,9 @@ const actions = (() => {
 })()
 
 console.log('');
-console.time('secretArchivesLock');
 console.log('Lock Size: ' + lock[0].length);
 console.log('Action Size: ' + actions.length);
 console.log('Actions: ' + actions);
+console.time('secretArchivesLock');
 secretArchivesLock(lock, actions);
 console.timeEnd('secretArchivesLock');
