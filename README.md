@@ -12,7 +12,7 @@ CFBot stores all of her important information in the Secret Archives. CodeMaster
 
 CodeMaster’s plan is to apply magnets to the lock’s 4 sides (one side at a time) to get the cells aligned correctly. CodeMaster doesn’t have much time to try to pick the lock before CFBot finds him, and he doesn’t want to waste time trying out different sequences. So you’re going to help him by implementing a function that, given a sequence of operations, will output the final state of the lock.
 
-![example](https://codefightsuserpics.s3.amazonaws.com/tasks/secretArchivesLock/img/example.png)
+![example](example.png)
 
 The lock is represented as a matrix. The lock’s occupied cells are represented by an uppercase English letter `A-Z` and its empty cells are represented by `.`. When CodeMaster puts a magnet on one of the lock’s sides, all the occupied cells shift toward that end of the lock.
 
