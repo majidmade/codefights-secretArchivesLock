@@ -44,3 +44,42 @@ function secretArchivesLock(lock, actions) {
         .map(row => row.join(''));
 
 }
+
+// these arent functionality tests -- codefights has 22 of those!
+// it generates maximally-large samples, to test for the 4000ms limit
+
+const pickFrom = haystack => haystack.charAt(Math.floor(Math.random() * haystack.length));
+const LOCK_SIZE = 300;
+const NUM_ACTIONS = 50;
+
+const row = (() => {
+  let ret = '';
+  while (ret.length < LOCK_SIZE) {
+    ret += pickFrom('...AB')
+  }
+  return ret;
+});
+
+const lock = (() => {
+  let ret = [];
+  while (ret.length < LOCK_SIZE) {
+    ret.push(row());
+  }
+  return ret;
+})()
+
+const actions = (() => {
+  let ret = '';
+  while (ret.length < NUM_ACTIONS) {
+    ret += pickFrom('LRUD');
+  }
+  return ret;
+})()
+
+console.log('');
+console.time('secretArchivesLock');
+console.log('Lock Size: ' + lock[0].length);
+console.log('Action Size: ' + actions.length);
+console.log('Actions: ' + actions);
+secretArchivesLock(lock, actions);
+console.timeEnd('secretArchivesLock');
